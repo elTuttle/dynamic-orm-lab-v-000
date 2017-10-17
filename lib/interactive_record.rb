@@ -60,6 +60,7 @@ class InteractiveRecord
         #binding.pry
         if value.class == String
           value = "'#{value}'"
+        end
         sql = "SELECT * FROM #{self.table_name} WHERE #{key.to_s} = #{value}"
 
       end
