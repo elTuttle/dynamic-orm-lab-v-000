@@ -10,10 +10,6 @@ class Student < InteractiveRecord
     end
   end
 
-  self.column_names.each do |col_name|
-    attr_accessor col_name.to_sym
-  end
-
   def self.table_name
     self.to_s.downcase.pluralize
   end
@@ -29,6 +25,10 @@ class Student < InteractiveRecord
       column_names << row["name"]
     end
     column_names.compact
+  end
+
+  self.column_names.each do |col_name|
+    attr_accessor col_name.to_sym
   end
 
 end
