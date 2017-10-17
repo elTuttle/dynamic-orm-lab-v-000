@@ -58,7 +58,7 @@ class InteractiveRecord
       #binding.pry
       attribute_hash.each do |key,value|
         binding.pry
-        sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
+        sql = "SELECT * FROM #{self.table_name} WHERE #{key.to_s} = #{value}"
       end
 
       DB[:conn].execute(sql)
