@@ -4,6 +4,10 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
 
+  def initialize(attributes)
+    
+  end
+
   def self.table_name
     self.to_s.downcase.pluralize
   end
@@ -20,5 +24,5 @@ class Student < InteractiveRecord
     end
     column_names.compact
   end
-  
+
 end
