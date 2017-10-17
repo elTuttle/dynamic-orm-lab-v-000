@@ -58,6 +58,8 @@ class InteractiveRecord
       sql = ""
       attribute_hash.each do |key,value|
         #binding.pry
+        if value.class == String
+          value = "'#{value}'"
         sql = "SELECT * FROM #{self.table_name} WHERE #{key.to_s} = #{value}"
 
       end
