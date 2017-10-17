@@ -4,8 +4,12 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
 
-  def initialize(attributes)
-    
+  def initialize(attributes={})
+
+  end
+
+  self.column_names.each do |col_name|
+    attr_accessor col_name.to_sym
   end
 
   def self.table_name
