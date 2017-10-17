@@ -57,14 +57,11 @@ class InteractiveRecord
     def self.find_by(attribute_hash)
       sql = ""
       attribute_hash.each do |key,value|
-        #binding.pry
         if value.class == String
           value = "'#{value}'"
         end
         sql = "SELECT * FROM #{self.table_name} WHERE #{key.to_s} = #{value}"
-
       end
-      binding.pry
       DB[:conn].execute(sql)
     end
 
