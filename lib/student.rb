@@ -5,7 +5,9 @@ require 'interactive_record.rb'
 class Student < InteractiveRecord
 
   def initialize(attributes={})
-
+    attributes.each do |property, value|
+      self.send("#{property}=", value)
+    end
   end
 
   self.column_names.each do |col_name|
